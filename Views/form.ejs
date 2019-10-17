@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+ <form   action="/" method="POST" >
+
+      <label> Name :</label>
+   <input type="text" name="username"    value="<%= user.username %>" id="usern"><br>
+
+   <%   if(error.username){  %>
+	       <%= error.username.msg%>
+					<% } %>
+
+          <br>
+	  <label> password </label>
+		<input type="password" name="password"  value="<%= user.password %>"  id="pass">
+		<br>
+
+		<%   if(error.password){  %>
+					<%= error.password.msg%>
+					 <% } %>
+<br>
+
+<label> Re-password </label>
+<input type="password" name="repassword" id="repass" value="<%= user.repassword %>" >
+<br>
+
+<%   if(error.repassword){  %>
+			<%= error.repassword.msg%>
+			 <% } %>
+<br>
+
+
+<br>
+
+<label> Information </label>
+<textarea type="text" name="info" id="inf" > </textarea>
+<br>
+<%   if(error.info){  %>
+			<%= error.info.msg%>
+			 <% } %>
+<br>
+
+
+ 	<button type="submit" name="submit">submit</button>
+ </form>
+
+</body>
+</html>
